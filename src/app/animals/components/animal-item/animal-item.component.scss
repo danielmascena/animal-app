@@ -1,0 +1,48 @@
+
+$radius-value: 5px;
+$transition-effect: 500ms ease;
+
+.animal-item {
+  border-radius: $radius-value;
+  background-color: whitesmoke;
+  transition: all $transition-effect;
+
+  &:hover {
+    transform: scale(1.1) rotateZ(-2deg);
+    background-color: #333;
+    color: whitesmoke;
+
+    .animal-description {
+      color: whitesmoke;
+    }
+  }
+
+  .animal-heading {
+    padding: 1rem 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  .animal-description {
+    padding: .5rem 1rem 3rem;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .animal-picture {
+    width: 100%;
+    border-radius: $radius-value $radius-value 0 0;
+    cursor: pointer;
+    transition: filter $transition-effect;
+
+    &:hover {
+      filter: sepia(90%);
+    }
+
+  }
+  @media (min-width: 40em) {
+    /* Probably some parent element that limits the img width */
+    & {
+      width: 80%;
+    }
+  }
+}

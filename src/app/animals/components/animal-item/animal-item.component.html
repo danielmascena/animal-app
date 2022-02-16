@@ -1,0 +1,10 @@
+<article class="animal-item">
+  <img class="animal-picture"
+    title='animal picture'
+    sizes="(min-width: 40em) 80vw, 100vw"
+    [alt]="animal?.type"
+    [src]="animal?.avatar"
+  />
+  <h1 class="animal-heading">{{animal?.name}}</h1>
+  <p class="animal-description">{{animal?.type}}</p>
+</article>
