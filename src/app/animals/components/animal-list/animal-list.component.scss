@@ -2,10 +2,48 @@
   display: flex;
   flex-wrap: wrap;
   margin: auto;
+  padding: 3rem;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  /** Smaller Screens */
+  @media (max-width: 480px) {
+    & {
+      display: block;
+    }
+  }
+
+  /** Portrait viewport */
+  @media (max-aspect-ratio: 1/1) {}
 }
 
-.action-btn {
-  text-transform: uppercase;
-  background-color: rgb(54, 209, 54);
-  color: whitesmoke;
+.btn-bar {
+  position: sticky;
+  background-color: whitesmoke;
+  bottom: 0;
+  line-height: 52px;
+  text-align: center;
+
+  .action-btn {
+    text-transform: uppercase;
+    background-color: rgb(54, 209, 54);
+    color: whitesmoke;
+    appearance: none;
+    padding: .5rem;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    max-width: 15rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(54, 209, 54, .8);
+    }
+
+    &:active {
+      box-shadow: 1px 2px 5px rgb(3 12 22 / 50%) inset;
+      background-color: rgb(32, 112, 32);
+    }
+  }
 }

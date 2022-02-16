@@ -2,13 +2,31 @@
 $radius-value: 5px;
 $transition-effect: 500ms ease;
 
+:host {
+
+  /* Desktops and laptops ----------- */
+  @media only screen and (max-width : 1824px) {
+    & {
+      width: 20rem;
+    }
+  }
+
+  /* tablets viewport (portrait) ----------- */
+  @media only screen and (max-width : 1024px) {
+    & {
+      flex: 1 0 30%;
+    }
+  }
+
+}
+
 .animal-item {
   border-radius: $radius-value;
   background-color: whitesmoke;
   transition: all $transition-effect;
 
   &:hover {
-    transform: scale(1.1) rotateZ(-2deg);
+    transform: scale(1.1);
     background-color: #333;
     color: whitesmoke;
 
@@ -28,11 +46,21 @@ $transition-effect: 500ms ease;
     color: #333;
   }
 
+  .animal-description,
+  .animal-heading {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
   .animal-picture {
     width: 100%;
     border-radius: $radius-value $radius-value 0 0;
     cursor: pointer;
     transition: filter $transition-effect;
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
 
     &:hover {
       filter: sepia(90%);

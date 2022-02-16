@@ -1,14 +1,8 @@
-<!--
-<section class="animal-list">
-  <app-animal-item *ngFor="let item of animals; trackBy: trackByFn" [animal]="item"></app-animal-item>
-</section>
--->
-
 
 <section class="animal-list">
   <app-animal-item *ngFor="let item of animals$ | async; trackBy: trackByFn" [animal]="item"></app-animal-item>
 </section>
 
 <div class="btn-bar">
-  <button class="action-btn" (click)="getAnimals($event)">update</button>
+  <button class="action-btn" (click)="updateAnimals()">update</button>
 </div>

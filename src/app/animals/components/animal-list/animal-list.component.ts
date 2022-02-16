@@ -11,18 +11,21 @@ import { Animal } from '../../models/Animal.model';
 })
 export class AnimalListComponent implements OnInit {
 
-  animals$: Observable<Animal[]> = of([]);
-  //animals: Animal[] = [];
+  animals$: Observable<Animal[]> | undefined;
+
   constructor(private animalService: AnimalService) { }
 
   ngOnInit(): void {
-    this.animals$ = this.animalService.getAnimals();
-    //this.animalService.getAnimals().subscribe( (animal: Animal[]) => this.animals = animal);
+    this.getAnimals();
   }
 
-  getAnimals($event: any): void {
-    const res = this.animalService.getAnimals();
-    console.log(this.animals$ === res, $event);
+  getAnimals(): void {
+    this.animals$ = this.animalService.getAnimals();
+  }
+
+  updateAnimals(): void {
+    this.getAnimals();
+    console.log('update')
   }
 
   trackByFn (index: number, item: Animal) {

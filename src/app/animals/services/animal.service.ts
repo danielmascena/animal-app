@@ -41,15 +41,6 @@ export class AnimalService {
    * Fetch all the animals from the API endpoint
    * @returns an array of Animal
    */
-  /*
-  getAnimals(): Observable<Animal[]> {
-    return this.httpClient.get<AnimalResponse>(this.animalsUrl, this.httpOptions)
-    .pipe(
-        retry(1),
-        catchError(this.processError)
-      ).pipe(map(body => body.items));
-  }
-  */
   getAnimals(): Observable<Animal[]> {
     if (!this.animals$) {
       this.animals$ = this.httpClient
